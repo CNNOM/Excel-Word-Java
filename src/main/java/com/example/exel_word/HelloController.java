@@ -32,6 +32,7 @@ public class HelloController {
         outputFormatCombo.getSelectionModel().selectFirst();
     }
 
+    // Добавление файлов
     @FXML
     private void handleAddFiles() {
         List<File> files = FileHelper.chooseExcelFiles(addFilesButton.getScene().getWindow());
@@ -45,6 +46,7 @@ public class HelloController {
         }
     }
 
+    // Добавление файлов из выбранной папки
     @FXML
     private void handleAddFolder() {
         List<File> files = FileHelper.chooseExcelFilesFromFolder(addFolderButton.getScene().getWindow());
@@ -58,6 +60,7 @@ public class HelloController {
         }
     }
 
+    // Удаление выбранного файла из списка
     @FXML
     private void handleRemove() {
         int selectedIndex = fileListView.getSelectionModel().getSelectedIndex();
@@ -67,6 +70,7 @@ public class HelloController {
         }
     }
 
+    // Объединение выбранных файлов в выбранном формате
     @FXML
     private void handleMerge() {
         if (selectedFiles.isEmpty()) {
@@ -91,6 +95,7 @@ public class HelloController {
         }
     }
 
+    // Просмотр выбранного файла
     @FXML
     private void handlePreview() {
         FileHelper.previewFile(previewButton.getScene().getWindow());
