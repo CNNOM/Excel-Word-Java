@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.exel_word.HelloController">
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.exel_word.HelloController">
+
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <Button fx:id="addFilesButton" text="Добавить файлы" onAction="#handleAddFiles"/>
+            <Button fx:id="addFolderButton" text="Добавить папку" onAction="#handleAddFolder"/>
+            <Button fx:id="removeButton" text="Удалить" onAction="#handleRemove"/>
+            <ComboBox fx:id="outputFormatCombo"/>
+            <Button fx:id="mergeButton" text="Объединить" onAction="#handleMerge"/>
+            <Button fx:id="previewButton" text="Просмотр" onAction="#handlePreview"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ListView fx:id="fileListView"/>
+    </center>
+
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
     </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+</BorderPane>
